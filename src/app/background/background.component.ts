@@ -10,6 +10,7 @@ export class BackgroundComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('hello from background')
   }
 
 }

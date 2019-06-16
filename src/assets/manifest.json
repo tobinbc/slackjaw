@@ -7,7 +7,7 @@
         "default_popup": "index.html#/popup",
         "default_title":"Open SlackJaw"
     },
-    "permissions": [ "tabs", "activeTab" ],
+    "permissions": [ "tabs", "activeTab","storage" ],
     "background": {
       "page": "index.html#/background",
       "persistent": false
