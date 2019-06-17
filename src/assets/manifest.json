@@ -7,10 +7,17 @@
         "default_popup": "index.html#/popup",
         "default_title":"Open SlackJaw"
     },
-    "permissions": [ "tabs", "activeTab","storage" ],
+    "permissions": [ 
+      "tabs", 
+      "activeTab",
+      "storage" ,
+      "webRequest",
+      "webRequestBlocking",
+      "*://slackjaw.de/*"
+    ],
     "background": {
-      "page": "index.html#/background",
-      "persistent": false
+      "scripts":["background.js"],
+      "persistent": true
     },
     "content_scripts": [
         {

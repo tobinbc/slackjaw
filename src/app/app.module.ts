@@ -6,6 +6,7 @@ import {MatButtonModule,  MatSlideToggleModule, MatCardModule, MatFormFieldModul
 import { PopupComponent } from './popup/popup.component';
 import { BackgroundComponent } from './background/background.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatSlideToggleModule,
