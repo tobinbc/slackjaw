@@ -8,7 +8,6 @@ export class AppComponent {
   title = 'slackjaw';
   color = 'green';
 
-
 handler = (port: chrome.runtime.Port) => {
   port;
 }

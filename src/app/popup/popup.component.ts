@@ -10,17 +10,21 @@ export class PopupComponent implements OnInit ,OnDestroy{
     this.port.disconnect()
     this.port = undefined
   }
+  slack:string = ''
 
-
+  
   port: chrome.runtime.Port
 
   constructor() { }
 
   ngOnInit() {
     this.connectWithContentScript();
+    chrome.storage.local.get(items => this.slack = items.slack || '')
   }
   save = () =>{
-    chrome.storage.local.set()
+    chrome.storage.local.set({
+      slack:this.slack
+    })
   }
 
     sendMessage = message => {
