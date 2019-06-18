@@ -7,13 +7,15 @@ import { PopupComponent } from './popup/popup.component';
 import { BackgroundComponent } from './background/background.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { RedirectComponent } from './redirect/redirect.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PopupComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,

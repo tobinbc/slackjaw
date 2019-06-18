@@ -19,10 +19,10 @@ export class PopupComponent implements OnInit ,OnDestroy{
 
   ngOnInit() {
     this.connectWithContentScript();
-    chrome.storage.local.get(items => this.slack = items.slack || '')
+    chrome.storage && chrome.storage.local.get(items => this.slack = items.slack || '')
   }
   save = () =>{
-    chrome.storage.local.set({
+    chrome.storage&& chrome.storage.local.set({
       slack:this.slack
     })
   }
