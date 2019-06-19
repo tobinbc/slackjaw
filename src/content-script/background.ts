@@ -3,29 +3,34 @@ class Background {
     constructor() {
         this.registerIntercept()
     }
-
-    registerIntercept = () => {
-        chrome.webRequest.onBeforeRequest.addListener(details => {
-            console.log('details', details)
-            /**
-             * frameId: 0
-method: "GET"
-parentFrameId: -1
-requestId: "14890"
-tabId: 718
-timeStamp: 1560857867315.1482
-type: "main_frame"
-url: "https://slackjaw.de/oauthredirect?code=655447184916.670583829478.79027dca0239c648fc24a3c43f712b343c46e3e295457818160314d64b6ba0c7&state="
-             */
-
-             let url = details.url
-             url = url.substring(url.indexOf('?'))
-
-            console.log('url')
-            return { 
-                redirectUrl: chrome.extension.getURL(`index.html#/redirect${url}`)
+    getQueryVariable(url, variable) {
+        var query = url.split('?')[1];
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                return decodeURIComponent(pair[1]);
             }
-        }, { urls: ['*://slackjaw.de/oauthredirect*'] }, ['blocking'])
+        }
+        console.log('Query variable %s not found', variable);
+    }
+    registerIntercept = () => {
+
+        chrome.webRequest.onHeadersReceived.addListener(details => {
+            console.log('details2', details)
+            let responseHeaders = details.responseHeaders
+            let slackSJON
+            if(responseHeaders.filter(header => header.name === 'x-slack-response').length){
+                slackSJON = responseHeaders.filter(header => header.name === 'x-slack-response')[0].value
+                console.log(JSON.parse(slackSJON))
+            } else {
+                slackSJON = JSON.stringify({ok:false})
+            }
+            let state = this.getQueryVariable(details.url,'state')
+          
+            chrome.tabs.update(details.tabId, {url: chrome.extension.getURL(`index.html#/redirect?state=${encodeURIComponent(state)}&slack=${encodeURIComponent(slackSJON)}`)});
+            return 
+        }, { urls: ['https://mgt539uoqb.execute-api.eu-west-2.amazonaws.com/v1/oauth/redirect*'] },["responseHeaders"])
         console.log('added background')
     }
 }

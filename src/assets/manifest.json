@@ -13,7 +13,8 @@
       "storage" ,
       "webRequest",
       "webRequestBlocking",
-      "*://slackjaw.de/*"
+      "*://slackjaw.de/*",
+      "<all_urls>"
     ],
     "background": {
       "scripts":["background.js"],
