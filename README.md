@@ -1,27 +1,57 @@
-# Slackjaw
+Webpack 4 + TypeScript starter
+------------------------------
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+[![Build Status](https://travis-ci.org/juristr/webpack-typescript-starter.svg?branch=master)](https://travis-ci.org/juristr/webpack-typescript-starter)
 
-## Development server
+This is by far no sophisticated starter or whatever. The goal is to get the simplest possible setup to get you started with Webpack 4 and TypeScript. You can then start from here and add further stuff you need, such as SASS compilation, add framework specific stuff etc.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Also check out the official Webpack 4 docs for a proper TypeScript setup: https://webpack.js.org/guides/typescript/
 
-## Code scaffolding
+_Note, this is still a WIP. Contributions/suggestions are welcome :smiley:_
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- [x] Webpack 4
+- [x] TypeScript 2 compilation
+- [x] ts-lint
+- [x] Webpack Development Server
+- [x] Karma and Jasmine test execution
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## How to use
 
-## Running unit tests
+Just clone it and get going.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+# --depth 1 removes all but one .git commit history
+$ git clone --depth=1 https://github.com/juristr/webpack-typescript-starter.git <your-project-name>
 
-## Running end-to-end tests
+# change directory to your project
+cd  <your-project-name>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Maybe remove the `.git` directory and start with a fresh one.
 
-## Further help
+# install all dependencies.
+$ npm i
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Start developing and serve your app:
+npm start
+
+# Build your app without minification: 
+npm run build
+
+# Build your app with minification: 
+npm run build.all
+
+# run unit tests:
+npm run test
+```
+## Contributions
+
+Of course! Open an issue and let's discuss :smiley:.
+
+## Links and other useful stuff
+
+Similar projects that could be a point of inspiration:
+
+- [krasimir/webpack-library-starter](https://github.com/krasimir/webpack-library-starter)
+

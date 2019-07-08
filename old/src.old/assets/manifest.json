@@ -4,7 +4,7 @@
     "version": "0.1",
     "browser_action": {
         "default_icon": "logo-small.png",
-        "default_popup": "popup.html",
+        "default_popup": "index.html#/popup",
         "default_title":"Open SlackJaw"
     },
     "permissions": [ 
@@ -13,7 +13,6 @@
       "storage" ,
       "webRequest",
       "webRequestBlocking",
-      "*://slackjaw.de/*",
       "<all_urls>"
     ],
     "background": {
