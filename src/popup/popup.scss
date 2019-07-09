@@ -1,0 +1,12 @@
+@import "@material/button/mdc-button";
+@import "@material/card/mdc-card";
+@import "@material/icon-button/mdc-icon-button";
+
+$material-icons-font-path: '~material-icons/iconfont/';
+
+@import '~material-icons/iconfont/material-icons.scss';
+
+.foo-button {
+    @include mdc-button-ink-color(teal);
+    @include mdc-states(teal);
+} 
