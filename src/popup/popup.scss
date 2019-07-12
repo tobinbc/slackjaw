@@ -6,7 +6,6 @@ $material-icons-font-path: '~material-icons/iconfont/';
 
 @import '~material-icons/iconfont/material-icons.scss';
 
-.foo-button {
-    @include mdc-button-ink-color(teal);
-    @include mdc-states(teal);
-} 
+html,body{
+    height: fit-content;
+}
