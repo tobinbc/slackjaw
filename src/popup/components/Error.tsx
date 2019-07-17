@@ -30,13 +30,15 @@ const sendRequest = e => {
   });
 }
 'https://mgt539uoqb.execute-api.eu-west-2.amazonaws.com/v1/oauth/redirect?code=655447184916.692637772837.e0e854d282e6695406e99882b830d285896779f3d8403d209428a8120f3095a4&state=bedd40c9-c376-4625-8240-e7eebf8caaaf'
-const Signup: FunctionComponent = props => {
+const Error: FunctionComponent = props => {
   const classes = useStyles({});
   // let buttons = document.getElementsByClassName('mdc-button');
   // for (var i in buttons) {
   //     new MDCRipple(buttons.item(+i));
   // }c
-  
+  chrome.storage.local.get(data => {
+    console.log(data)
+  })
  
   return (
     <Fragment>
@@ -65,4 +67,4 @@ const Signup: FunctionComponent = props => {
   );
 };
 
-export  {Signup}
+export  {Error}
