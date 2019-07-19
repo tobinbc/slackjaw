@@ -4,7 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import React, { Fragment, FunctionComponent } from 'react';
 
-const Error: FunctionComponent = props => {
+const Holding: FunctionComponent = props => {
 
 
 
@@ -30,4 +30,4 @@ const Error: FunctionComponent = props => {
   );
 };
 
-export { Error };
+export { Holding };

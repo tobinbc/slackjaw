@@ -20,7 +20,7 @@
     },
     "content_scripts": [
         {
-          "matches": ["*://*/*"],
+          "matches": ["https://mgt539uoqb.execute-api.eu-west-2.amazonaws.com/v1/oauth/redirect*"],
           "js": ["content.bundle.js"]
         }
       ]
