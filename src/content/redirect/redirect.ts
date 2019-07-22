@@ -6,4 +6,5 @@ try{
 } catch (e){
     console.log(e)
 }
+
 chrome.storage.local.set(data)

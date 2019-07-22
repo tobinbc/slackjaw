@@ -8,7 +8,7 @@ import { RouteComponentProps } from 'react-router-dom'
 import { getStorage } from '../utils';
 
 type Props = RouteComponentProps
-const Holding: FunctionComponent<Props> = (props: Props) => {
+const Record: FunctionComponent<Props> = (props: Props) => {
 
   useEffect(() => {
     getNextRoute()
@@ -36,4 +36,4 @@ const Holding: FunctionComponent<Props> = (props: Props) => {
   );
 };
 
-export { Holding };
+export { Record };

@@ -9,10 +9,11 @@ module.exports = {
   context: ROOT,
 
   entry: {
-    popup: './popup/popup.tsx',
-    background: './background/background.ts',
-    tab: './tab/tab.ts',
-    content: './content/content.ts'
+    popup: 'popup/popup.tsx',
+    "background-redirecter": 'background/redirecter/redirecter.ts',
+    "tab-redirect": 'tabs/redirect/redirect.tsx',
+    "content-redirect": 'content/redirect/redirect.ts',
+    "content-hangouts": 'content/hangouts/hangouts.ts',
   },
 
   output: {
@@ -27,9 +28,6 @@ module.exports = {
 
   module: {
     rules: [
-      /****************
-       * PRE-LOADERS
-       *****************/
       {
         enforce: 'pre',
         test: /\.js$/,
@@ -41,10 +39,6 @@ module.exports = {
         exclude: /node_modules/,
         use: 'tslint-loader'
       },
-
-      /****************
-       * LOADERS
-       *****************/
       {
         test: /\.ts$/,
         exclude: [/node_modules/],
@@ -90,20 +84,17 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
     new CopyPlugin([{ from: 'assets/*', to: DESTINATION, flatten: true }]),
 
     new HtmlWebpackPlugin({
-      // inject:false,
       chunks: ['popup'],
       filename: 'popup.html',
       template: 'popup/popup.html'
     }),
     new HtmlWebpackPlugin({
-      // inject:false,
-      chunks: ['tab'],
-      filename: 'tab.html',
-      template: 'tab/tab.html'
+      chunks: ['tab-redirect'],
+      filename: 'tab-redirect.html',
+      template: 'tabs/redirect/redirect.html'
     })
   ],
   devtool: 'cheap-module-source-map',
