@@ -11,6 +11,7 @@ const sendRequest = e => {
   chrome.tabs.create({ url }, (tab) => {
     // Can do things like send a postmessage as you already have the tab id / context
   });
+  chrome.storage.local.set({ state })
 }
 const Signup: FunctionComponent = props =>
   <CardActions>
